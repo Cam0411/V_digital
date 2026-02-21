@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>V Digital Concept</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'vdc-bg': '#FFFFFF',
+              'vdc-text': '#111827', // Gray 900
+              'vdc-green': '#10B981', // Emerald 500
+              'vdc-gray': '#F9FAFB', // Gray 50
+              'vdc-dark-bg': '#111827', // Gray 900
+            },
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'sans-serif'],
+            },
+            animation: {
+              'infinite-scroll': 'infinite-scroll 25s linear infinite',
+              'infinite-scroll-reverse': 'infinite-scroll-reverse 25s linear infinite',
+              'fade-in': 'fade-in 1s ease-out forwards',
+            },
+            keyframes: {
+              'infinite-scroll': {
+                'from': { transform: 'translateX(0)' },
+                'to': { transform: 'translateX(-100%)' },
+              },
+              'infinite-scroll-reverse': {
+                'from': { transform: 'translateX(-100%)' },
+                'to': { transform: 'translateX(0)' },
+              },
+              'fade-in': {
+                'from': { opacity: 0 },
+                'to': { opacity: 1 },
+              },
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .text-gradient {
+        background: linear-gradient(to right, #10B981, #111827);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .parallax-bg {
+        background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+        background-size: 24px 24px;
+      }
+      .strength-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-vdc-bg">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
